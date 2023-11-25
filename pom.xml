@@ -11,4 +11,12 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>valquiria.desktop_hotel.Desktop_hotel</exec.mainClass>
     </properties>
+    <dependencies>
+        <!-- Otras dependencias -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version> 
+        </dependency>
+    </dependencies>
 </project>
