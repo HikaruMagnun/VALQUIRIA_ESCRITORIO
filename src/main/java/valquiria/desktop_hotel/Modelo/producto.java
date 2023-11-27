@@ -1,9 +1,8 @@
 
-package Modelo;
-
+package valquiria.desktop_hotel.Modelo;
 
 public class producto {
-    
+
     private int idProducto;
     private String nombre;
     private String marca;
@@ -15,7 +14,8 @@ public class producto {
     public producto() {
     }
 
-    public producto(int idProducto, String nombre, String marca, String descripcion, int stock, double precio, String tipo) {
+    public producto(int idProducto, String nombre, String marca, String descripcion, int stock, double precio,
+            String tipo) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.marca = marca;
@@ -25,7 +25,6 @@ public class producto {
         this.tipo = tipo;
     }
 
-    
     public int getIdProducto() {
         return idProducto;
     }
@@ -81,7 +80,5 @@ public class producto {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
-    
+
 }

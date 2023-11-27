@@ -1,5 +1,4 @@
-package Implements;
-
+package valquiria.desktop_hotel.Implements;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,24 +7,24 @@ import javax.swing.JOptionPane;
 
 public class conexion {
     String url = "jdbc:postgresql://db.swgwmakcrwpgjfeiysse.supabase.co:5432/postgres";
-        String usuario = "postgres";
-        String contraseña = "BB8IBRjM33aELU8g";
-    
-    public conexion(){
+    String usuario = "postgres";
+    String contraseña = "BB8IBRjM33aELU8g";
+
+    public conexion() {
     }
-    
-    public Connection conectar(){
-        Connection link=null;
-            
+
+    public Connection conectar() {
+        Connection link = null;
+
         try {
             Class.forName("org.postgresql.Driver");
-            link=DriverManager.getConnection(url, usuario, contraseña);
+            link = DriverManager.getConnection(url, usuario, contraseña);
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showConfirmDialog(null,e);
+            JOptionPane.showConfirmDialog(null, e);
         }
         return link;
     }
-    
+
     public static void main(String[] args) {
         conexion prueba = new conexion();
         Connection conexion = prueba.conectar();

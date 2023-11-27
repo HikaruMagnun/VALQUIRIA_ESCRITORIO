@@ -1,6 +1,5 @@
 
-package Modelo;
-
+package valquiria.desktop_hotel.Modelo;
 
 public class reserva {
     private int idReserva;
@@ -15,7 +14,8 @@ public class reserva {
     public reserva() {
     }
 
-    public reserva(int idReserva, int idCliente, int idHabitacion, String descripcion, String estado, double precio, String fechaIngreso, String fechaSalida) {
+    public reserva(int idReserva, int idCliente, int idHabitacion, String descripcion, String estado, double precio,
+            String fechaIngreso, String fechaSalida) {
         this.idReserva = idReserva;
         this.idCliente = idCliente;
         this.idHabitacion = idHabitacion;
@@ -89,6 +89,5 @@ public class reserva {
     public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
-    
-    
+
 }

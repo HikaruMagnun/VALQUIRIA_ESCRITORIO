@@ -1,6 +1,4 @@
-
-package Modelo;
-
+package valquiria.desktop_hotel.Modelo;
 
 public class habitacion {
     private int idhabitacion;
@@ -10,7 +8,6 @@ public class habitacion {
     private String estado;
     private int piso;
 
-   
     public habitacion() {
     }
 
@@ -29,7 +26,7 @@ public class habitacion {
         this.tipo_habitacion = tipo_habitacion;
         this.estado = estado;
     }
-    
+
     public int getIdhabitacion() {
         return idhabitacion;
     }
@@ -70,7 +67,4 @@ public class habitacion {
         this.estado = estado;
     }
 
-   
-
-    
 }

@@ -1,9 +1,8 @@
 
-package Modelo;
-
+package valquiria.desktop_hotel.Modelo;
 
 public class persona {
-   
+
     private String nombre;
     private String apellidos;
     private Long numero_documento;
@@ -12,7 +11,8 @@ public class persona {
     private String correo;
     private String tipo_doc;
 
-    public persona(String nombre, String apellidos, Long numero_documento, String direccion, String telefono, String correo,String tipo_doc) {
+    public persona(String nombre, String apellidos, Long numero_documento, String direccion, String telefono,
+            String correo, String tipo_doc) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.numero_documento = numero_documento;
@@ -21,8 +21,8 @@ public class persona {
         this.correo = correo;
         this.tipo_doc = tipo_doc;
     }
-    
-    public persona(){
+
+    public persona() {
     }
 
     public String getNombre() {
@@ -80,6 +80,5 @@ public class persona {
     public void setTipo_doc(String tipo_doc) {
         this.tipo_doc = tipo_doc;
     }
-    
-    
+
 }
