@@ -1,7 +1,7 @@
 
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.usuarioCRUD;
+import valquiria.desktop_hotel.Implements.usuarioCRUD;
 import javax.swing.JOptionPane;
 
 public class FrmUsuarioDeleteEdit extends javax.swing.JFrame {

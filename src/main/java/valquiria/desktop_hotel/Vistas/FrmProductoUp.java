@@ -1,21 +1,19 @@
 
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.productoCRUD;
-import Modelo.producto;
+import valquiria.desktop_hotel.Implements.productoCRUD;
+import valquiria.desktop_hotel.Modelo.producto;
 import javax.swing.JOptionPane;
-
 
 public class FrmProductoUp extends javax.swing.JFrame {
 
-   
     public FrmProductoUp() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
@@ -111,9 +109,11 @@ public class FrmProductoUp extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_registrarMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_registrarMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_registrarMousePressed(evt);
             }
@@ -173,73 +173,77 @@ public class FrmProductoUp extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 758, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 428, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void folio3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folio3MousePressed
+    private void folio3MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_folio3MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_folio3MousePressed
+    }// GEN-LAST:event_folio3MousePressed
 
-    private void btn_registrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMousePressed
+    private void btn_registrarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_registrarMousePressed
         producto dts = new producto();
-        productoCRUD func= new productoCRUD();
+        productoCRUD func = new productoCRUD();
 
         dts.setNombre(txtNombre.getText());
 
-        int spiso=combotipo.getSelectedIndex();
+        int spiso = combotipo.getSelectedIndex();
         dts.setTipo(combotipo.getItemAt(spiso));
-        
+
         dts.setPrecio(Double.parseDouble(txtprecio.getText()));
         dts.setMarca(txtmarca.getText());
         dts.setStock(Integer.parseInt(txtstock.getText()));
         dts.setDescripcion(txtdescripcion.getText());
         System.out.println("Se registro correctamente el producto");
         func.insertar(dts);
-        
+
         FrmProductoVista newframe = new FrmProductoVista();
         newframe.setVisible(true);
         this.dispose();
 
-    }//GEN-LAST:event_btn_registrarMousePressed
+    }// GEN-LAST:event_btn_registrarMousePressed
 
-    private void btn_registrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseExited
+    private void btn_registrarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_registrarMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_registrarMouseExited
+    }// GEN-LAST:event_btn_registrarMouseExited
 
-    private void btn_registrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseEntered
+    private void btn_registrarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_registrarMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_registrarMouseEntered
+    }// GEN-LAST:event_btn_registrarMouseEntered
 
-    private void folio1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folio1MousePressed
+    private void folio1MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_folio1MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_folio1MousePressed
+    }// GEN-LAST:event_folio1MousePressed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -249,15 +253,19 @@ public class FrmProductoUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProductoUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

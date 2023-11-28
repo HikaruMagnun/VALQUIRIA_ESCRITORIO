@@ -1,19 +1,20 @@
 
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.huespedCRUD;
-import Modelo.persona;
+import valquiria.desktop_hotel.Implements.huespedCRUD;
+import valquiria.desktop_hotel.Modelo.persona;
 import javax.swing.JOptionPane;
 
-
 public class FrmClienteUp extends javax.swing.JFrame {
-    Integer contCodigo=0;
+    Integer contCodigo = 0;
+
     public FrmClienteUp() {
         initComponents();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -114,9 +115,11 @@ public class FrmClienteUp extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnnuevoMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnnuevoMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnnuevoMousePressed(evt);
             }
@@ -199,7 +202,8 @@ public class FrmClienteUp extends javax.swing.JFrame {
         jSeparator6.setPreferredSize(new java.awt.Dimension(200, 10));
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 150, 10));
 
-        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC", "PASAPORTE", "CEDULA" }));
+        combotipo
+                .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC", "PASAPORTE", "CEDULA" }));
         jPanel1.add(combotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 90, -1));
 
         Text6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -227,161 +231,164 @@ public class FrmClienteUp extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 758, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 758,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 428, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txttelefonoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txttelefonoMousePressed
-        if(txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-        txtnombre.setText("Ingrese el nombre");
-        if(txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-        txtapellidos.setText("Ingrese el apellido paterno");
-        if(txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-        txtnumero.setText("Ingrese un numero");
-        if(txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-        txtdomicilio.setText("Ingrese el domicilio");
-        if(txttelefono.getText().equals("Ingrese un número telefónico"))
-        txttelefono.setText("");
-    }//GEN-LAST:event_txttelefonoMousePressed
+    private void txttelefonoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txttelefonoMousePressed
+        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
+            txtnombre.setText("Ingrese el nombre");
+        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
+            txtapellidos.setText("Ingrese el apellido paterno");
+        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
+            txtnumero.setText("Ingrese un numero");
+        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
+            txtdomicilio.setText("Ingrese el domicilio");
+        if (txttelefono.getText().equals("Ingrese un número telefónico"))
+            txttelefono.setText("");
+    }// GEN-LAST:event_txttelefonoMousePressed
 
-    private void txttelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttelefonoActionPerformed
+    private void txttelefonoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txttelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txttelefonoActionPerformed
+    }// GEN-LAST:event_txttelefonoActionPerformed
 
-    private void txtdomicilioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtdomicilioMousePressed
+    private void txtdomicilioMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtdomicilioMousePressed
 
-        if(txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-        txtnombre.setText("Ingrese el nombre");
-        if(txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-        txtapellidos.setText("Ingrese el apellido paterno");
-        if(txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-        txtnumero.setText("Ingrese un numero");
-        if(txtdomicilio.getText().equals("Ingrese el domicilio"))
-        txtdomicilio.setText("");
-        if(txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-        txttelefono.setText("Ingrese un número telefónico");
-    }//GEN-LAST:event_txtdomicilioMousePressed
+        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
+            txtnombre.setText("Ingrese el nombre");
+        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
+            txtapellidos.setText("Ingrese el apellido paterno");
+        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
+            txtnumero.setText("Ingrese un numero");
+        if (txtdomicilio.getText().equals("Ingrese el domicilio"))
+            txtdomicilio.setText("");
+        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
+            txttelefono.setText("Ingrese un número telefónico");
+    }// GEN-LAST:event_txtdomicilioMousePressed
 
-    private void txtdomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdomicilioActionPerformed
+    private void txtdomicilioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtdomicilioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtdomicilioActionPerformed
+    }// GEN-LAST:event_txtdomicilioActionPerformed
 
-    private void btnnuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnnuevoMouseEntered
-       
-    }//GEN-LAST:event_btnnuevoMouseEntered
+    private void btnnuevoMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMouseEntered
 
-    private void btnnuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnnuevoMouseExited
-     
-    }//GEN-LAST:event_btnnuevoMouseExited
+    }// GEN-LAST:event_btnnuevoMouseEntered
 
-    private void btnnuevoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnnuevoMousePressed
+    private void btnnuevoMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMouseExited
+
+    }// GEN-LAST:event_btnnuevoMouseExited
+
+    private void btnnuevoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMousePressed
         persona dts = new persona();
-        huespedCRUD func= new huespedCRUD();
+        huespedCRUD func = new huespedCRUD();
         dts.setNumero_documento(Long.valueOf(txtnumero.getText()));
 
-        int stipo=combotipo.getSelectedIndex();
+        int stipo = combotipo.getSelectedIndex();
         dts.setTipo_doc(combotipo.getItemAt(stipo));
-        
+
         dts.setNombre(txtnombre.getText());
         dts.setApellidos(txtapellidos.getText());
         dts.setDireccion(txtdomicilio.getText());
         dts.setTelefono(txttelefono.getText());
         dts.setCorreo(txtcorreo.getText());
-        
 
         func.insertar(dts);
-        
+
         FrmClienteVista newframe = new FrmClienteVista();
-            newframe.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_btnnuevoMousePressed
+        newframe.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_btnnuevoMousePressed
 
-    private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnombreMousePressed
-        if(txtnombre.getText().equals("Ingrese el nombre"))
-        txtnombre.setText("");
-        if(txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-        txtapellidos.setText("Ingrese el apellido paterno");
-        if(txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-        txtnumero.setText("Ingrese un numero");
-        if(txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-        txtdomicilio.setText("Ingrese el domicilio");
-        if(txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-        txttelefono.setText("Ingrese un número telefónico");
-        if(txtcorreo.getText().equals("") || txtcorreo.getText() == null || txttelefono.getText().equals(" "))
-        txtcorreo.setText("Ingrese un correo");
-    }//GEN-LAST:event_txtnombreMousePressed
+    private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnombreMousePressed
+        if (txtnombre.getText().equals("Ingrese el nombre"))
+            txtnombre.setText("");
+        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
+            txtapellidos.setText("Ingrese el apellido paterno");
+        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
+            txtnumero.setText("Ingrese un numero");
+        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
+            txtdomicilio.setText("Ingrese el domicilio");
+        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
+            txttelefono.setText("Ingrese un número telefónico");
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txttelefono.getText().equals(" "))
+            txtcorreo.setText("Ingrese un correo");
+    }// GEN-LAST:event_txtnombreMousePressed
 
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombreActionPerformed
+    }// GEN-LAST:event_txtnombreActionPerformed
 
-    private void txtapellidosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtapellidosMousePressed
-        if(txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-        txtnombre.setText("Ingrese el nombre");
-        if(txtapellidos.getText().equals("Ingrese el apellido paterno"))
-        txtapellidos.setText("");
-        if(txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-        txtnumero.setText("Ingrese un numero");
-        if(txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-        txtdomicilio.setText("Ingrese el domicilio");
-        if(txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-        txttelefono.setText("Ingrese un número telefónico");
-    }//GEN-LAST:event_txtapellidosMousePressed
+    private void txtapellidosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtapellidosMousePressed
+        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
+            txtnombre.setText("Ingrese el nombre");
+        if (txtapellidos.getText().equals("Ingrese el apellido paterno"))
+            txtapellidos.setText("");
+        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
+            txtnumero.setText("Ingrese un numero");
+        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
+            txtdomicilio.setText("Ingrese el domicilio");
+        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
+            txttelefono.setText("Ingrese un número telefónico");
+    }// GEN-LAST:event_txtapellidosMousePressed
 
-    private void txtapellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapellidosActionPerformed
+    private void txtapellidosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtapellidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtapellidosActionPerformed
+    }// GEN-LAST:event_txtapellidosActionPerformed
 
-    private void txtnumeroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnumeroMousePressed
-        if(txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-        txtnombre.setText("Ingrese el nombre");
-        if(txtnumero.getText().equals("Ingrese un numero"))
-        txtnumero.setText("");
-        if(txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-        txtapellidos.setText("Ingrese el apellido paterno");
-        if(txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-        txtdomicilio.setText("Ingrese el domicilio");
-        if(txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-        txttelefono.setText("Ingrese un número telefónico");
-    }//GEN-LAST:event_txtnumeroMousePressed
+    private void txtnumeroMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnumeroMousePressed
+        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
+            txtnombre.setText("Ingrese el nombre");
+        if (txtnumero.getText().equals("Ingrese un numero"))
+            txtnumero.setText("");
+        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
+            txtapellidos.setText("Ingrese el apellido paterno");
+        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
+            txtdomicilio.setText("Ingrese el domicilio");
+        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
+            txttelefono.setText("Ingrese un número telefónico");
+    }// GEN-LAST:event_txtnumeroMousePressed
 
-    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumeroActionPerformed
+    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnumeroActionPerformed
+    }// GEN-LAST:event_txtnumeroActionPerformed
 
-    private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreoMousePressed
+    private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtcorreoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcorreoMousePressed
+    }// GEN-LAST:event_txtcorreoMousePressed
 
-    private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreoActionPerformed
+    private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtcorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcorreoActionPerformed
+    }// GEN-LAST:event_txtcorreoActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -391,16 +398,20 @@ public class FrmClienteUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClienteUp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

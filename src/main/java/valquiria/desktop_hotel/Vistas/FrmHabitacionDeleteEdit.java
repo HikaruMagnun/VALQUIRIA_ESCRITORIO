@@ -1,18 +1,16 @@
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-
-import Implements.habitacionCRUD;
-import Implements.productoCRUD;
-import Vistas.FrmHabitacionVista;
-import Modelo.habitacion;
+import valquiria.desktop_hotel.Implements.habitacionCRUD;
+import valquiria.desktop_hotel.Implements.productoCRUD;
+import valquiria.desktop_hotel.Vistas.FrmHabitacionVista;
+import valquiria.desktop_hotel.Modelo.habitacion;
 import javax.swing.JOptionPane;
 
 public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
 
     public FrmHabitacionDeleteEdit() {
         initComponents();
-        
-        
+
         txtid.setEnabled(false);
         txtid.setText(FrmHabitacionVista.id);
         txtnumero.setText(FrmHabitacionVista.id);
@@ -21,7 +19,8 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
@@ -104,9 +103,11 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_editarMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_editarMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_editarMousePressed(evt);
             }
@@ -152,7 +153,8 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
         jPanel5.add(Text9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         comboTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VIP", "Matrimonial", "Doble", "Solitaria" }));
+        comboTipo.setModel(
+                new javax.swing.DefaultComboBoxModel<>(new String[] { "VIP", "Matrimonial", "Doble", "Solitaria" }));
         jPanel5.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 120, -1));
 
         Text6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -185,9 +187,11 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_eliminarMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btn_eliminarMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_eliminarMousePressed(evt);
             }
@@ -216,75 +220,75 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 758, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 428, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void folio1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folio1MousePressed
-        
-    }//GEN-LAST:event_folio1MousePressed
+    private void folio1MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_folio1MousePressed
 
-    private void btn_eliminarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMousePressed
+    }// GEN-LAST:event_folio1MousePressed
+
+    private void btn_eliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMousePressed
         habitacion dts = new habitacion();
-        habitacionCRUD func= new habitacionCRUD();
+        habitacionCRUD func = new habitacionCRUD();
         dts.setIdhabitacion(Integer.parseInt(txtid.getText()));
         System.out.println("Se eelimino correctamente la habitacion");
         func.eliminar(dts);
 
-        if(func.eliminar(dts)){
+        if (func.eliminar(dts)) {
             JOptionPane.showConfirmDialog(rootPane, "La habitacion se edito correctamente");
             txtid.setText("");
             txtnumero.setText("");
             txtpiso.setText("");
             txtprecio.setText("");
-            
+
         }
         FrmHabitacionVista newframe = new FrmHabitacionVista();
-            newframe.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_btn_eliminarMousePressed
+        newframe.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_btn_eliminarMousePressed
 
-    private void btn_eliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMouseExited
+    private void btn_eliminarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMouseExited
 
-    }//GEN-LAST:event_btn_eliminarMouseExited
+    }// GEN-LAST:event_btn_eliminarMouseExited
 
-    private void btn_eliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMouseEntered
+    private void btn_eliminarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMouseEntered
 
-    }//GEN-LAST:event_btn_eliminarMouseEntered
+    }// GEN-LAST:event_btn_eliminarMouseEntered
 
-    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumeroActionPerformed
+    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnumeroActionPerformed
+    }// GEN-LAST:event_txtnumeroActionPerformed
 
-    private void folio4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folio4MousePressed
+    private void folio4MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_folio4MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_folio4MousePressed
+    }// GEN-LAST:event_folio4MousePressed
 
-    private void btn_editarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editarMousePressed
+    private void btn_editarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMousePressed
 
         habitacion dts = new habitacion();
-        habitacionCRUD func= new habitacionCRUD();
+        habitacionCRUD func = new habitacionCRUD();
 
         dts.setNum_habitacion(Integer.parseInt(txtnumero.getText()));
 
-        int spiso=comboTipo.getSelectedIndex();
+        int spiso = comboTipo.getSelectedIndex();
         dts.setIdhabitacion(Integer.parseInt(txtnumero.getText()));
         dts.setTipo_habitacion(comboTipo.getItemAt(spiso));
 
@@ -292,7 +296,7 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
         dts.setPiso(Integer.parseInt(txtpiso.getText()));
         System.out.println("Se edito correctamente la habitacion");
 
-        if(func.editar(dts,Integer.parseInt(txtid.getText()))){
+        if (func.editar(dts, Integer.parseInt(txtid.getText()))) {
             JOptionPane.showConfirmDialog(rootPane, "La habitacion se edito correctamente");
             txtid.setText("");
             txtnumero.setText("");
@@ -300,32 +304,36 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
             txtprecio.setText("");
             this.dispose();
         }
-        
+
         FrmHabitacionVista newframe = new FrmHabitacionVista();
         newframe.setVisible(true);
-        
-    }//GEN-LAST:event_btn_editarMousePressed
 
-    private void btn_editarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editarMouseExited
+    }// GEN-LAST:event_btn_editarMousePressed
+
+    private void btn_editarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_editarMouseExited
+    }// GEN-LAST:event_btn_editarMouseExited
 
-    private void btn_editarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editarMouseEntered
+    private void btn_editarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMouseEntered
 
-    }//GEN-LAST:event_btn_editarMouseEntered
+    }// GEN-LAST:event_btn_editarMouseEntered
 
-    private void folio2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folio2MousePressed
+    private void folio2MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_folio2MousePressed
 
-    }//GEN-LAST:event_folio2MousePressed
+    }// GEN-LAST:event_folio2MousePressed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -335,16 +343,20 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName())
+                    .log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName())
+                    .log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName())
+                    .log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmHabitacionDeleteEdit.class.getName())
+                    .log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

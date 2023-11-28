@@ -5,7 +5,7 @@ package valquiria.desktop_hotel.Implements;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import Interface.UsuarioDAO;
+import valquiria.desktop_hotel.Interface.UsuarioDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

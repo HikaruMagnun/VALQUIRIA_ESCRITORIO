@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.usuarioCRUD;
+import valquiria.desktop_hotel.Implements.usuarioCRUD;
 //import Modelo.usuario;
 
 /**

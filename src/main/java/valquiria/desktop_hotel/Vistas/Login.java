@@ -1,6 +1,6 @@
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.usuarioCRUD;
+import valquiria.desktop_hotel.Implements.usuarioCRUD;
 //import Modelo.usuario;
 import java.awt.Color;
 

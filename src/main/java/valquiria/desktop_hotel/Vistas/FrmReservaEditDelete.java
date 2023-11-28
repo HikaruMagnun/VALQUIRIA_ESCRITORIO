@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vistas;
+package valquiria.desktop_hotel.Vistas;
 
-import Implements.reservaCRUD;
-import Modelo.reserva;
+import valquiria.desktop_hotel.Implements.reservaCRUD;
+import valquiria.desktop_hotel.Modelo.reserva;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
  */
 public class FrmReservaEditDelete extends javax.swing.JFrame {
 
- 
     public FrmReservaEditDelete() {
         initComponents();
         txtid.setEnabled(false);
@@ -27,10 +26,9 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
         txtfechaFinal.setText(FrmReservaVista.valoresReserva[6]);
     }
 
-    
-    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -111,9 +109,11 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btneditarMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btneditarMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btneditarMousePressed(evt);
             }
@@ -158,7 +158,8 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
         Text5.setText("Estado");
         jPanel1.add(Text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
-        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RESERVADO", "PAGADO", "NO PAGADO" }));
+        comboestado
+                .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RESERVADO", "PAGADO", "NO PAGADO" }));
         comboestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboestadoActionPerformed(evt);
@@ -264,9 +265,11 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btneliminarMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btneliminarMouseExited(evt);
             }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btneliminarMousePressed(evt);
             }
@@ -285,86 +288,86 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 758, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 758,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 428, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumeroActionPerformed
+    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnumeroActionPerformed
+    }// GEN-LAST:event_txtnumeroActionPerformed
 
-    private void txtnumeroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnumeroMousePressed
+    private void txtnumeroMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnumeroMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnumeroMousePressed
+    }// GEN-LAST:event_txtnumeroMousePressed
 
-    private void txthabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthabitacionActionPerformed
+    private void txthabitacionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txthabitacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txthabitacionActionPerformed
+    }// GEN-LAST:event_txthabitacionActionPerformed
 
-    private void txthabitacionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txthabitacionMousePressed
+    private void txthabitacionMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txthabitacionMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txthabitacionMousePressed
+    }// GEN-LAST:event_txthabitacionMousePressed
 
-    private void txtidpersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidpersonaActionPerformed
+    private void txtidpersonaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtidpersonaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidpersonaActionPerformed
+    }// GEN-LAST:event_txtidpersonaActionPerformed
 
-    private void txtidpersonaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtidpersonaMousePressed
+    private void txtidpersonaMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtidpersonaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidpersonaMousePressed
+    }// GEN-LAST:event_txtidpersonaMousePressed
 
-    private void txtfechaFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfechaFinalActionPerformed
+    private void txtfechaFinalActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfechaFinalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfechaFinalActionPerformed
+    }// GEN-LAST:event_txtfechaFinalActionPerformed
 
-    private void txtfechaFinalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfechaFinalMousePressed
+    private void txtfechaFinalMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtfechaFinalMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfechaFinalMousePressed
+    }// GEN-LAST:event_txtfechaFinalMousePressed
 
-    private void comboestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboestadoActionPerformed
+    private void comboestadoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_comboestadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboestadoActionPerformed
+    }// GEN-LAST:event_comboestadoActionPerformed
 
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombreActionPerformed
+    }// GEN-LAST:event_txtnombreActionPerformed
 
-    private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnombreMousePressed
-        if(txtnombre.getText().equals("Ingrese el nombre"))
-        txtnombre.setText("");
-        
-    }//GEN-LAST:event_txtnombreMousePressed
+    private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnombreMousePressed
+        if (txtnombre.getText().equals("Ingrese el nombre"))
+            txtnombre.setText("");
 
-    private void btneditarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditarMousePressed
+    }// GEN-LAST:event_txtnombreMousePressed
+
+    private void btneditarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneditarMousePressed
         reserva dts = new reserva();
-        reservaCRUD func= new reservaCRUD();
-     
+        reservaCRUD func = new reservaCRUD();
+
         dts.setFechaIngreso(txtfechaInicio.getText());
         dts.setFechaSalida(txtfechaFinal.getText());
-        int sestado=comboestado.getSelectedIndex();
+        int sestado = comboestado.getSelectedIndex();
         dts.setIdCliente(Integer.parseInt(txtidpersona.getText()));
         dts.setEstado(comboestado.getItemAt(sestado));
         dts.setIdHabitacion(Integer.parseInt(txtnumero.getText()));
         dts.setIdReserva(Integer.parseInt(txtid.getText()));
 
-        if(func.editar(dts)){
+        if (func.editar(dts)) {
             JOptionPane.showConfirmDialog(rootPane, "El huesped se edito correctamente");
             txtid.setText("");
             txtnombre.setText("");
@@ -373,77 +376,79 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
             txtidpersona.setText("");
             txtnumero.setText("");
         }
-        
+
         FrmReservaVista newframe = new FrmReservaVista();
         newframe.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btneditarMousePressed
+    }// GEN-LAST:event_btneditarMousePressed
 
-    private void btneditarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditarMouseExited
+    private void btneditarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneditarMouseExited
 
-    }//GEN-LAST:event_btneditarMouseExited
+    }// GEN-LAST:event_btneditarMouseExited
 
-    private void btneditarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditarMouseEntered
+    private void btneditarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneditarMouseEntered
 
-    }//GEN-LAST:event_btneditarMouseEntered
+    }// GEN-LAST:event_btneditarMouseEntered
 
-    private void txtfechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfechaInicioActionPerformed
+    private void txtfechaInicioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfechaInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfechaInicioActionPerformed
+    }// GEN-LAST:event_txtfechaInicioActionPerformed
 
-    private void txtfechaInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfechaInicioMousePressed
-        
-    }//GEN-LAST:event_txtfechaInicioMousePressed
+    private void txtfechaInicioMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtfechaInicioMousePressed
 
-    private void btneliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneliminarMouseEntered
+    }// GEN-LAST:event_txtfechaInicioMousePressed
+
+    private void btneliminarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneliminarMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btneliminarMouseEntered
+    }// GEN-LAST:event_btneliminarMouseEntered
 
-    private void btneliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneliminarMouseExited
+    private void btneliminarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneliminarMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btneliminarMouseExited
+    }// GEN-LAST:event_btneliminarMouseExited
 
-    private void btneliminarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneliminarMousePressed
+    private void btneliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneliminarMousePressed
         // TODO add your handling code here:
         reserva dts = new reserva();
-        reservaCRUD func= new reservaCRUD();
+        reservaCRUD func = new reservaCRUD();
         dts.setIdReserva(Integer.parseInt(txtid.getText()));
         System.out.println("Se elimino correctamente la habitacion");
         func.eliminar(dts);
 
         FrmReservaVista newframe = new FrmReservaVista();
-            newframe.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_btneliminarMousePressed
+        newframe.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_btneliminarMousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         reserva dts = new reserva();
-        reservaCRUD func= new reservaCRUD();
-        
-        
+        reservaCRUD func = new reservaCRUD();
+
         txtnombre.setText(func.fitrar(txtidpersona.getText()));
-        System.out.println("adada"+func.fitrar(txtidpersona.getText()));
-    }//GEN-LAST:event_jButton1ActionPerformed
+        System.out.println("adada" + func.fitrar(txtidpersona.getText()));
+    }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         reserva dts = new reserva();
-        reservaCRUD func= new reservaCRUD();
-        
-        
+        reservaCRUD func = new reservaCRUD();
+
         txthabitacion.setText(func.fitrarHab(txtnumero.getText()));
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }// GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -453,15 +458,19 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReservaEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
