@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Interface.HuespedDAO;
-import Modelo.persona;
+import valquiria.desktop_hotel.Interface.HuespedDAO;
+import valquiria.desktop_hotel.Modelo.persona;
 
 public class huespedCRUD implements HuespedDAO {
     private final conexion postgres = new conexion();

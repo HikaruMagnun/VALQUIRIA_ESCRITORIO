@@ -1,7 +1,7 @@
 package valquiria.desktop_hotel.Implements;
 
-import Interface.HabitacionDAO;
-import Modelo.habitacion;
+import valquiria.desktop_hotel.Interface.HabitacionDAO;
+import valquiria.desktop_hotel.Modelo.habitacion;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

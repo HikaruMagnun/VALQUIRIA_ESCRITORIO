@@ -1,7 +1,7 @@
 package valquiria.desktop_hotel.Implements;
 
-import Interface.ProductoDAO;
-import Modelo.producto;
+import valquiria.desktop_hotel.Interface.ProductoDAO;
+import valquiria.desktop_hotel.Modelo.producto;
 
 import java.sql.Statement;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class productoCRUD implements ProductoDAO {
 
-    private final Implements.conexion mysql = new Implements.conexion();
+    private final valquiria.desktop_hotel.Implements.conexion mysql = new valquiria.desktop_hotel.Implements.conexion();
     private final Connection cn = mysql.conectar();
     private String sSQL = "";
     public int totalregistros;
