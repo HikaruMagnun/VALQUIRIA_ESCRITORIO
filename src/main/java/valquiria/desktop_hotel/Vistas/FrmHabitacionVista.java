@@ -1,6 +1,6 @@
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.habitacionCRUD;
+import valquiria.desktop_hotel.DAOImpl.HabitacionDAOImpl;
 import valquiria.desktop_hotel.Modelo.habitacion;
 import static valquiria.desktop_hotel.Vistas.FrmHabitacionDeleteEdit.txtid;
 import static valquiria.desktop_hotel.Vistas.FrmHabitacionDeleteEdit.txtnumero;
@@ -17,7 +17,7 @@ public class FrmHabitacionVista extends javax.swing.JFrame {
     public FrmHabitacionVista() {
         initComponents();
         DefaultTableModel modelo;
-        habitacionCRUD func = new habitacionCRUD();
+        HabitacionDAOImpl func = new HabitacionDAOImpl();
         modelo = func.mostrar("");
         tablalistado.setModel(modelo);
         this.setLocationRelativeTo(null);
@@ -252,7 +252,7 @@ public class FrmHabitacionVista extends javax.swing.JFrame {
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMousePressed
         DefaultTableModel modelo;
-        habitacionCRUD func = new habitacionCRUD();
+        HabitacionDAOImpl func = new HabitacionDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }// GEN-LAST:event_searchMousePressed

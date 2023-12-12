@@ -1,27 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
-import valquiria.desktop_hotel.Implements.usuarioCRUD;
+import valquiria.desktop_hotel.DAOImpl.ServicioDAOImpl;
+
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Piero
- */
-public class FrmUsuarioVista extends javax.swing.JFrame {
+public class FrmServicioVista extends javax.swing.JFrame {
 
-    public static String[] valoresUsuario = new String[10];
+    public static String[] valores = new String[8];
 
-    public FrmUsuarioVista() {
+    public FrmServicioVista() {
         initComponents();
         DefaultTableModel modelo;
-        usuarioCRUD func = new usuarioCRUD();
-        modelo = func.mostrar(txtbuscar.getText());
+        ServicioDAOImpl func = new ServicioDAOImpl();
+        modelo = func.mostrar("");
         tablalistado.setModel(modelo);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -43,7 +37,7 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnactualizar = new javax.swing.JPanel();
         act = new javax.swing.JLabel();
-        btnnuevo = new javax.swing.JPanel();
+        nuevo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
@@ -62,7 +56,7 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
         jPanel4.add(body3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Title3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Title3.setText("Usuarios");
+        Title3.setText("Servicios de clientes");
         jPanel4.add(Title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 153, 255));
@@ -127,32 +121,27 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
         act.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         act.setForeground(new java.awt.Color(255, 255, 255));
         act.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        act.setText("Actualizar");
-        act.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                actMousePressed(evt);
-            }
-        });
-        btnactualizar.add(act, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, -1));
+        act.setText("Cliente-Serv");
+        btnactualizar.add(act, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, -1));
 
-        jPanel4.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 100, -1));
+        jPanel4.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 140, -1));
 
-        btnnuevo.setBackground(new java.awt.Color(18, 90, 173));
-        btnnuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnnuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+        nuevo.setBackground(new java.awt.Color(18, 90, 173));
+        nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnnuevoMouseEntered(evt);
+                nuevoMouseEntered(evt);
             }
 
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnnuevoMouseExited(evt);
+                nuevoMouseExited(evt);
             }
 
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnnuevoMousePressed(evt);
+                nuevoMousePressed(evt);
             }
         });
-        btnnuevo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        nuevo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,9 +152,9 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
                 jLabel3MousePressed(evt);
             }
         });
-        btnnuevo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
+        nuevo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
 
-        jPanel4.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 80, -1));
+        jPanel4.add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 395, 80, -1));
 
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
@@ -214,7 +203,7 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
         });
         Salir.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
 
-        jPanel4.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 80, -1));
+        jPanel4.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -245,87 +234,84 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
     }// GEN-LAST:event_txtbuscarMousePressed
 
     private void txtbuscarMouseReleased(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtbuscarMouseReleased
-
+        // nothing
     }// GEN-LAST:event_txtbuscarMouseReleased
 
     private void searchMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMouseEntered
-
+        // TODO add your handling code here:
     }// GEN-LAST:event_searchMouseEntered
 
     private void searchMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMouseExited
-
+        // TODO add your handling code here:
     }// GEN-LAST:event_searchMouseExited
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMousePressed
         DefaultTableModel modelo;
-        usuarioCRUD func = new usuarioCRUD();
+        ServicioDAOImpl func = new ServicioDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }// GEN-LAST:event_searchMousePressed
 
-    private void actMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_actMousePressed
-        // TODO add your handling code here:
-        FrmUsuarioDeleteEdit f1 = new FrmUsuarioDeleteEdit();
-        f1.setVisible(true);
-        this.dispose();
-    }// GEN-LAST:event_actMousePressed
-
     private void btnactualizarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnactualizarMouseEntered
-
+        // TODO add your handling code here:
     }// GEN-LAST:event_btnactualizarMouseEntered
 
     private void btnactualizarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnactualizarMouseExited
-
+        // TODO add your handling code here:
     }// GEN-LAST:event_btnactualizarMouseExited
 
     private void btnactualizarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnactualizarMousePressed
-        FrmUsuarioDeleteEdit f6 = new FrmUsuarioDeleteEdit();
-        f6.setVisible(true);
+        FrmServcioEditDelete f4 = new FrmServcioEditDelete();
+        f4.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btnactualizarMousePressed
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel3MousePressed
         // Abrir sección
-        FrmUsuarioUp f2 = new FrmUsuarioUp();
-        f2.setVisible(true);
+        FrmServicioUp f4 = new FrmServicioUp();
+        f4.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_jLabel3MousePressed
 
-    private void btnnuevoMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMouseEntered
+    private void nuevoMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_nuevoMouseEntered
+        // TODO add your handling code here:
+    }// GEN-LAST:event_nuevoMouseEntered
 
-    }// GEN-LAST:event_btnnuevoMouseEntered
+    private void nuevoMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_nuevoMouseExited
+        // TODO add your handling code here:
+    }// GEN-LAST:event_nuevoMouseExited
 
-    private void btnnuevoMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMouseExited
-
-    }// GEN-LAST:event_btnnuevoMouseExited
-
-    private void btnnuevoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMousePressed
+    private void nuevoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_nuevoMousePressed
         // Abrir sección
-        FrmUsuarioUp f2 = new FrmUsuarioUp();
-        f2.setVisible(true);
+        FrmServicioUp f4 = new FrmServicioUp();
+        f4.setVisible(true);
         this.dispose();
-    }// GEN-LAST:event_btnnuevoMousePressed
+    }// GEN-LAST:event_nuevoMousePressed
 
     private void tablalistadoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_tablalistadoMousePressed
+        // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             int fila = tablalistado.getSelectedRow();
 
-            valoresUsuario[0] = tablalistado.getValueAt(fila, 0).toString();
-            valoresUsuario[1] = tablalistado.getValueAt(fila, 1).toString();
-            valoresUsuario[2] = tablalistado.getValueAt(fila, 2).toString();
-            valoresUsuario[3] = tablalistado.getValueAt(fila, 3).toString();
-            valoresUsuario[4] = tablalistado.getValueAt(fila, 4).toString();
-            valoresUsuario[5] = tablalistado.getValueAt(fila, 5).toString();
-            valoresUsuario[6] = tablalistado.getValueAt(fila, 6).toString();
-            valoresUsuario[7] = tablalistado.getValueAt(fila, 7).toString();
-            valoresUsuario[8] = tablalistado.getValueAt(fila, 8).toString();
-            valoresUsuario[9] = tablalistado.getValueAt(fila, 9).toString();
+            valores[0] = tablalistado.getValueAt(fila, 0).toString();
+            valores[1] = tablalistado.getValueAt(fila, 1).toString();
+            valores[2] = tablalistado.getValueAt(fila, 2).toString();
+            valores[3] = tablalistado.getValueAt(fila, 3).toString();
+            valores[4] = tablalistado.getValueAt(fila, 4).toString();
+            valores[5] = tablalistado.getValueAt(fila, 5).toString();
+            valores[6] = tablalistado.getValueAt(fila, 6).toString();
+            valores[7] = tablalistado.getValueAt(fila, 7).toString();
+            // FrmHabitacionDeleteEdit.txtid.setText("");
+            // FrmHabitacionDeleteEdit.txtnumero.setText("");
+            // FrmHabitacionDeleteEdit.txtestado.setText("");
+            // FrmHabitacionDeleteEdit.txtprecio.setText("");
 
         }
     }// GEN-LAST:event_tablalistadoMousePressed
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MousePressed
         // Abrir sección
+
         this.dispose();
     }// GEN-LAST:event_jLabel5MousePressed
 
@@ -363,24 +349,25 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmUsuarioVista.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(FrmServicioVista.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmUsuarioVista.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(FrmServicioVista.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmUsuarioVista.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(FrmServicioVista.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmUsuarioVista.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(FrmServicioVista.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
+        // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmUsuarioVista().setVisible(true);
+                new FrmServicioVista().setVisible(true);
             }
         });
     }
@@ -391,13 +378,13 @@ public class FrmUsuarioVista extends javax.swing.JFrame {
     private javax.swing.JLabel act;
     private javax.swing.JPanel body3;
     private javax.swing.JPanel btnactualizar;
-    private javax.swing.JPanel btnnuevo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JPanel nuevo;
     private javax.swing.JPanel search;
     private javax.swing.JTable tablalistado;
     private javax.swing.JTextField txtbuscar;

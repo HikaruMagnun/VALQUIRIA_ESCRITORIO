@@ -1,22 +1,40 @@
 
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.productoCRUD;
-import valquiria.desktop_hotel.Modelo.producto;
+import valquiria.desktop_hotel.DAOImpl.ServicioDAOImpl;
+import valquiria.desktop_hotel.Modelo.Servicio;
+import static valquiria.desktop_hotel.Vistas.FrmHabitacionDeleteEdit.txtnumero;
+import static valquiria.desktop_hotel.Vistas.FrmHabitacionDeleteEdit.txtpiso;
+import static valquiria.desktop_hotel.Vistas.FrmHabitacionDeleteEdit.txtprecio;
+import java.util.List;
 import javax.swing.JOptionPane;
 
-public class FrmProductoEditDelete extends javax.swing.JFrame {
+public class FrmServcioEditDelete extends javax.swing.JFrame {
+    private static List<Servicio> serviciosList;
 
-    public FrmProductoEditDelete() {
+    public FrmServcioEditDelete() {
         initComponents();
+        ServicioDAOImpl func = new ServicioDAOImpl();
 
+        serviciosList = func.obtenerTiposServiciosDesdeBD();
+
+        for (Servicio tipoServicio : serviciosList) {
+            comboservicio.addItem(tipoServicio.getTipo_servicio());
+        }
         txtid.setEnabled(false);
-        txtid.setText(FrmProductoVista.valores[0]);
-        txtdescripcion.setText(FrmProductoVista.valores[2]);
-        txtNombre.setText(FrmProductoVista.valores[1]);
-        txtprecio.setText(FrmProductoVista.valores[4]);
-        txtmarca.setText(FrmProductoVista.valores[5]);
-        txtstock.setText(FrmProductoVista.valores[6]);
+        txtid.setText(FrmServicioVista.valores[0]);
+        txtNombre.setText(FrmServicioVista.valores[1]);
+    }
+
+    private int buscarServicio(String servicio) {
+
+        for (Servicio tipoServicio : serviciosList) {
+            if (tipoServicio.getTipo_servicio().equals(servicio)) {
+                return tipoServicio.getId();
+            }
+        }
+
+        return 0;
     }
 
     @SuppressWarnings("unchecked")
@@ -30,26 +48,16 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         Text3 = new javax.swing.JLabel();
         Text4 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        Text6 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
-        combotipo = new javax.swing.JComboBox<>();
-        Text7 = new javax.swing.JLabel();
-        txtstock = new javax.swing.JTextField();
+        comboservicio = new javax.swing.JComboBox<>();
         Text11 = new javax.swing.JLabel();
-        Text12 = new javax.swing.JLabel();
-        txtdescripcion = new javax.swing.JTextField();
-        jSeparator16 = new javax.swing.JSeparator();
-        txtmarca = new javax.swing.JTextField();
-        jSeparator11 = new javax.swing.JSeparator();
-        txtprecio = new javax.swing.JTextField();
         btn_eliminar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btn_editar = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
+        comboestado = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,7 +71,7 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
         jPanel4.add(body3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Title3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Title3.setText("Actualizar Producto");
+        Title3.setText("Servicio-Cliente");
         jPanel4.add(Title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, -1));
 
         jSeparator6.setForeground(new java.awt.Color(204, 204, 204));
@@ -72,68 +80,23 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
         jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 10, 370));
 
         Text3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text3.setText("Descripcion");
-        jPanel4.add(Text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        Text3.setText("Servicio");
+        jPanel4.add(Text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         Text4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text4.setText("Tipo Producto");
-        jPanel4.add(Text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        jSeparator7.setForeground(new java.awt.Color(0, 153, 255));
-        jSeparator7.setPreferredSize(new java.awt.Dimension(200, 10));
-        jPanel4.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 260, 10));
+        Text4.setText("Estado");
+        jPanel4.add(Text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jSeparator8.setForeground(new java.awt.Color(0, 153, 255));
         jSeparator8.setPreferredSize(new java.awt.Dimension(200, 10));
         jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 300, 10));
 
-        Text6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text6.setText("Precio");
-        jPanel4.add(Text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
-
-        jSeparator10.setForeground(new java.awt.Color(0, 153, 255));
-        jSeparator10.setPreferredSize(new java.awt.Dimension(200, 10));
-        jPanel4.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 90, 10));
-
-        combotipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimento", "Bebida" }));
-        jPanel4.add(combotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 120, -1));
-
-        Text7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text7.setText("Marca");
-        jPanel4.add(Text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
-
-        txtstock.setForeground(new java.awt.Color(102, 102, 102));
-        txtstock.setBorder(null);
-        jPanel4.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 90, 30));
+        comboservicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(comboservicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 120, -1));
 
         Text11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text11.setText("Nombre");
+        Text11.setText("Nro alojamiento");
         jPanel4.add(Text11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        Text12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text12.setText("Stock");
-        jPanel4.add(Text12, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
-
-        txtdescripcion.setForeground(new java.awt.Color(102, 102, 102));
-        txtdescripcion.setBorder(null);
-        jPanel4.add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
-
-        jSeparator16.setForeground(new java.awt.Color(0, 153, 255));
-        jSeparator16.setPreferredSize(new java.awt.Dimension(200, 10));
-        jPanel4.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 90, 10));
-
-        txtmarca.setForeground(new java.awt.Color(102, 102, 102));
-        txtmarca.setBorder(null);
-        jPanel4.add(txtmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 270, 30));
-
-        jSeparator11.setForeground(new java.awt.Color(0, 153, 255));
-        jSeparator11.setPreferredSize(new java.awt.Dimension(200, 10));
-        jPanel4.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 270, 10));
-
-        txtprecio.setForeground(new java.awt.Color(102, 102, 102));
-        txtprecio.setBorder(null);
-        jPanel4.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 90, 30));
 
         btn_eliminar.setBackground(new java.awt.Color(18, 90, 173));
         btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -180,7 +143,7 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Editar");
+        jLabel6.setText("Guardar");
         btn_editar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 50));
 
         jPanel4.add(btn_editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 200, 50));
@@ -189,6 +152,10 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setBorder(null);
         jPanel4.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 300, 30));
+
+        comboestado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE", "CULMINADO" }));
+        jPanel4.add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,27 +190,30 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
     }// GEN-LAST:event_btn_eliminarMouseExited
 
     private void btn_eliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMousePressed
-        producto dts = new producto();
-        productoCRUD func = new productoCRUD();
-        dts.setIdProducto(Integer.parseInt(txtid.getText()));
-        System.out.println("Se elimino correctamente el producto");
-        func.eliminar(dts);
+        ServicioDAOImpl func = new ServicioDAOImpl();
 
-        if (func.eliminar(dts)) {
-            JOptionPane.showConfirmDialog(rootPane, "El producto se elimino scorrectamente");
+        if (func.eliminar(Integer.parseInt(txtid.getText()))) {
+            JOptionPane.showConfirmDialog(rootPane, "El servicio del cliente se elimino scorrectamente");
             txtid.setText("");
-            txtdescripcion.setText("");
             txtNombre.setText("");
-            txtprecio.setText("");
-            txtstock.setText("");
-            txtmarca.setText("");
         }
 
-        FrmProductoVista newframe = new FrmProductoVista();
+        FrmServicioVista newframe = new FrmServicioVista();
         newframe.setVisible(true);
         this.dispose();
 
     }// GEN-LAST:event_btn_eliminarMousePressed
+
+    private boolean validateInputs() {
+
+        String regexEntero = "^\\d{1,9}$";
+
+        if (!txtNombre.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Número Alojamiento no válido");
+            return false;
+        }
+        return true;
+    }
 
     private void btn_editarMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMouseEntered
 
@@ -254,35 +224,43 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
     }// GEN-LAST:event_btn_editarMouseExited
 
     private void btn_editarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMousePressed
+        if (!validateInputs()) {
+            return;
+        }
+        if (txtid.getText().isEmpty() || txtid.getText() == null) {
+            int spiso = comboservicio.getSelectedIndex();
+            int idServicioTipo = 0;
+            idServicioTipo = buscarServicio(comboservicio.getItemAt(spiso));
+            ServicioDAOImpl func = new ServicioDAOImpl();
 
-        producto dts = new producto();
-        productoCRUD func = new productoCRUD();
+            if (func.insertar(idServicioTipo, Integer.parseInt(txtNombre.getText()))) {
+                JOptionPane.showConfirmDialog(rootPane, "El producto se edito correctamente");
+                txtid.setText("");
+                txtNombre.setText("");
+            }
+            FrmServicioVista newframe = new FrmServicioVista();
+            newframe.setVisible(true);
+            this.dispose();
+        } else {
 
-        dts.setNombre(txtdescripcion.getText());
+            int spiso = comboservicio.getSelectedIndex();
+            int idServicioTipo = 0;
+            idServicioTipo = buscarServicio(comboservicio.getItemAt(spiso));
+            ServicioDAOImpl func = new ServicioDAOImpl();
+            int sestado = comboestado.getSelectedIndex();
+            boolean estado = comboservicio.getItemAt(sestado) != "PENDIENTE";
 
-        int spiso = combotipo.getSelectedIndex();
-        dts.setIdProducto(Integer.parseInt(txtid.getText()));
-        dts.setTipo(combotipo.getItemAt(spiso));
-        dts.setMarca(txtmarca.getText());
-        dts.setDescripcion(txtdescripcion.getText());
-        dts.setPrecio(Double.parseDouble(txtprecio.getText()));
-        dts.setStock(Integer.parseInt(txtstock.getText()));
-        System.out.println("Se edito correctamente el producto");
-        func.editar(dts);
-
-        if (func.editar(dts)) {
-            JOptionPane.showConfirmDialog(rootPane, "El producto se edito correctamente");
-            txtid.setText("");
-            txtdescripcion.setText("");
-            txtNombre.setText("");
-            txtprecio.setText("");
-            txtstock.setText("");
-            txtmarca.setText("");
+            if (func.editar(estado, idServicioTipo, Integer.parseInt(txtNombre.getText()),
+                    Integer.parseInt(txtid.getText()))) {
+                JOptionPane.showConfirmDialog(rootPane, "El Servicio se edito correctamente");
+                txtid.setText("");
+                txtNombre.setText("");
+            }
+            FrmServicioVista newframe = new FrmServicioVista();
+            newframe.setVisible(true);
+            this.dispose();
 
         }
-        FrmProductoVista newframe = new FrmProductoVista();
-        newframe.setVisible(true);
-        this.dispose();
 
     }// GEN-LAST:event_btn_editarMousePressed
 
@@ -307,54 +285,45 @@ public class FrmProductoEditDelete extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoEditDelete.class.getName())
-                    .log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmServcioEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoEditDelete.class.getName())
-                    .log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmServcioEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoEditDelete.class.getName())
-                    .log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmServcioEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmProductoEditDelete.class.getName())
-                    .log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmServcioEditDelete.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
+        // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmProductoEditDelete().setVisible(true);
+                new FrmServcioEditDelete().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Text11;
-    private javax.swing.JLabel Text12;
     private javax.swing.JLabel Text3;
     private javax.swing.JLabel Text4;
-    private javax.swing.JLabel Text6;
-    private javax.swing.JLabel Text7;
     private javax.swing.JLabel Title3;
     private javax.swing.JPanel body3;
     private javax.swing.JPanel btn_editar;
     private javax.swing.JPanel btn_eliminar;
-    private javax.swing.JComboBox<String> combotipo;
+    private javax.swing.JComboBox<String> comboestado;
+    private javax.swing.JComboBox<String> comboservicio;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtdescripcion;
     private javax.swing.JTextField txtid;
-    private javax.swing.JTextField txtmarca;
-    private javax.swing.JTextField txtprecio;
-    private javax.swing.JTextField txtstock;
     // End of variables declaration//GEN-END:variables
 }

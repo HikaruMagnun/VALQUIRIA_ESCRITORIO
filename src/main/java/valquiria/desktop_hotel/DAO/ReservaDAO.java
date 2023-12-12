@@ -1,5 +1,5 @@
 
-package valquiria.desktop_hotel.Interface;
+package valquiria.desktop_hotel.DAO;
 
 import javax.swing.table.DefaultTableModel;
 import valquiria.desktop_hotel.Modelo.reserva;

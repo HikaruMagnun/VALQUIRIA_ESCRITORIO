@@ -162,7 +162,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Productos");
+        jLabel8.setText("Servicios");
         btn_productos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
         Menu.add(btn_productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 50));
@@ -505,25 +505,9 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(btn_servicios);
         resetColor(btn_usuarios);
         // Abrir sección
-        FrmProductoVista newframe = new FrmProductoVista();
+        FrmServicioVista newframe = new FrmServicioVista();
         newframe.setVisible(true);
     }// GEN-LAST:event_btn_productosMousePressed
-
-    private void btn_serviciosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMousePressed
-
-    }// GEN-LAST:event_btn_serviciosMousePressed
-
-    private void btn_usuariosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMousePressed
-        resetColor(btn_reserva);
-        resetColor(btn_huespedes);
-        resetColor(btn_habitacion);
-        resetColor(btn_productos);
-        resetColor(btn_servicios);
-        // Abrir sección
-        FrmUsuarioVista newframe = new FrmUsuarioVista();
-        newframe.setVisible(true);
-
-    }// GEN-LAST:event_btn_usuariosMousePressed
 
     private void red_squrMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_red_squrMousePressed
         System.exit(0);
@@ -581,32 +565,6 @@ public class Dashboard extends javax.swing.JFrame {
             resetColor(btn_productos);
     }// GEN-LAST:event_btn_productosMouseExited
 
-    private void btn_serviciosMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMouseEntered
-        if (btn_servicios.getBackground().getRGB() == -15574355)
-            setColor(btn_servicios);
-    }// GEN-LAST:event_btn_serviciosMouseEntered
-
-    private void btn_serviciosMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMouseExited
-        if (btn_huespedes.getBackground().getRGB() != -15574355 || btn_reserva.getBackground().getRGB() != -15574355
-                || btn_habitacion.getBackground().getRGB() != -15574355
-                || btn_productos.getBackground().getRGB() != -15574355
-                || btn_usuarios.getBackground().getRGB() != -15574355)
-            resetColor(btn_servicios);
-    }// GEN-LAST:event_btn_serviciosMouseExited
-
-    private void btn_usuariosMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMouseEntered
-        if (btn_usuarios.getBackground().getRGB() == -15574355)
-            setColor(btn_usuarios);
-    }// GEN-LAST:event_btn_usuariosMouseEntered
-
-    private void btn_usuariosMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMouseExited
-        if (btn_huespedes.getBackground().getRGB() != -15574355 || btn_reserva.getBackground().getRGB() != -15574355
-                || btn_habitacion.getBackground().getRGB() != -15574355
-                || btn_productos.getBackground().getRGB() != -15574355
-                || btn_servicios.getBackground().getRGB() != -15574355)
-            resetColor(btn_usuarios);
-    }// GEN-LAST:event_btn_usuariosMouseExited
-
     private void red_squrMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_red_squrMouseEntered
         red_squr.setBackground(new Color(204, 0, 0));
         exit.setForeground(Color.white);
@@ -626,6 +584,40 @@ public class Dashboard extends javax.swing.JFrame {
         red_squr.setBackground(new Color(255, 255, 255));
         exit.setForeground(new Color(102, 102, 102));
     }// GEN-LAST:event_exitMouseExited
+
+    private void btn_serviciosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMousePressed
+
+    }// GEN-LAST:event_btn_serviciosMousePressed
+
+    private void btn_serviciosMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMouseExited
+        if (btn_huespedes.getBackground().getRGB() != -15574355 || btn_reserva.getBackground().getRGB() != -15574355
+                || btn_habitacion.getBackground().getRGB() != -15574355
+                || btn_productos.getBackground().getRGB() != -15574355
+                || btn_usuarios.getBackground().getRGB() != -15574355)
+            resetColor(btn_servicios);
+    }// GEN-LAST:event_btn_serviciosMouseExited
+
+    private void btn_serviciosMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_serviciosMouseEntered
+        if (btn_servicios.getBackground().getRGB() == -15574355)
+            setColor(btn_servicios);
+    }// GEN-LAST:event_btn_serviciosMouseEntered
+
+    private void btn_usuariosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMousePressed
+
+    }// GEN-LAST:event_btn_usuariosMousePressed
+
+    private void btn_usuariosMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMouseExited
+        if (btn_huespedes.getBackground().getRGB() != -15574355 || btn_reserva.getBackground().getRGB() != -15574355
+                || btn_habitacion.getBackground().getRGB() != -15574355
+                || btn_productos.getBackground().getRGB() != -15574355
+                || btn_servicios.getBackground().getRGB() != -15574355)
+            resetColor(btn_usuarios);
+    }// GEN-LAST:event_btn_usuariosMouseExited
+
+    private void btn_usuariosMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_usuariosMouseEntered
+        if (btn_usuarios.getBackground().getRGB() == -15574355)
+            setColor(btn_usuarios);
+    }// GEN-LAST:event_btn_usuariosMouseEntered
 
     void setColor(JPanel panel) {
         panel.setBackground(new Color(21, 101, 192));

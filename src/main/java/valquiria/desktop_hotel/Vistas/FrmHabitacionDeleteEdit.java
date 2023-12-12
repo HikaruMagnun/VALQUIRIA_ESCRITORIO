@@ -1,7 +1,7 @@
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.habitacionCRUD;
-import valquiria.desktop_hotel.Implements.productoCRUD;
+import valquiria.desktop_hotel.DAOImpl.HabitacionDAOImpl;
+import valquiria.desktop_hotel.DAOImpl.ServicioDAOImpl;
 import valquiria.desktop_hotel.Vistas.FrmHabitacionVista;
 import valquiria.desktop_hotel.Modelo.habitacion;
 import javax.swing.JOptionPane;
@@ -247,7 +247,7 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
 
     private void btn_eliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMousePressed
         habitacion dts = new habitacion();
-        habitacionCRUD func = new habitacionCRUD();
+        HabitacionDAOImpl func = new HabitacionDAOImpl();
         dts.setIdhabitacion(Integer.parseInt(txtid.getText()));
         System.out.println("Se eelimino correctamente la habitacion");
         func.eliminar(dts);
@@ -264,6 +264,29 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_eliminarMousePressed
+
+    private boolean validateInputs() {
+
+        String regexEntero = "^\\d{1,9}$";
+        String regexDouble = "^\\d{1,3}(\\.\\d{1,2})?$";
+
+        if (!txtnumero.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Número Hab no válido");
+            return false;
+        }
+
+        if (!txtprecio.getText().matches(regexDouble)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Precio no válido");
+            return false;
+        }
+
+        if (!txtpiso.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Piso no válido");
+            return false;
+        }
+
+        return true;
+    }
 
     private void btn_eliminarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_eliminarMouseExited
 
@@ -282,9 +305,11 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
     }// GEN-LAST:event_folio4MousePressed
 
     private void btn_editarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMousePressed
-
+        if (!validateInputs()) {
+            return;
+        }
         habitacion dts = new habitacion();
-        habitacionCRUD func = new habitacionCRUD();
+        HabitacionDAOImpl func = new HabitacionDAOImpl();
 
         dts.setNum_habitacion(Integer.parseInt(txtnumero.getText()));
 
@@ -304,10 +329,9 @@ public class FrmHabitacionDeleteEdit extends javax.swing.JFrame {
             txtprecio.setText("");
             this.dispose();
         }
-
         FrmHabitacionVista newframe = new FrmHabitacionVista();
         newframe.setVisible(true);
-
+        this.dispose();
     }// GEN-LAST:event_btn_editarMousePressed
 
     private void btn_editarMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_editarMouseExited

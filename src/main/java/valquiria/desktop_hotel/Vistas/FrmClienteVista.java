@@ -1,7 +1,7 @@
 
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
+import valquiria.desktop_hotel.DAOImpl.HuespedDAOImpl;
 import javax.swing.table.DefaultTableModel;
 
 public class FrmClienteVista extends javax.swing.JFrame {
@@ -10,7 +10,7 @@ public class FrmClienteVista extends javax.swing.JFrame {
     public FrmClienteVista() {
         initComponents();
         DefaultTableModel modelo;
-        huespedCRUD func = new huespedCRUD();
+        HuespedDAOImpl func = new HuespedDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }
@@ -35,6 +35,8 @@ public class FrmClienteVista extends javax.swing.JFrame {
         tablalistado = new javax.swing.JTable();
         btnnuevo = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        Salir1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,7 +153,7 @@ public class FrmClienteVista extends javax.swing.JFrame {
         });
         Salir.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
 
-        jPanel4.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 80, -1));
+        jPanel4.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 80, -1));
 
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
@@ -201,6 +203,36 @@ public class FrmClienteVista extends javax.swing.JFrame {
         btnnuevo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
 
         jPanel4.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 80, -1));
+
+        Salir1.setBackground(new java.awt.Color(18, 90, 173));
+        Salir1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Salir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Salir1MouseEntered(evt);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Salir1MouseExited(evt);
+            }
+
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Salir1MousePressed(evt);
+            }
+        });
+        Salir1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Servicio");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel6MousePressed(evt);
+            }
+        });
+        Salir1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
+
+        jPanel4.add(Salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -317,7 +349,7 @@ public class FrmClienteVista extends javax.swing.JFrame {
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMousePressed
         DefaultTableModel modelo;
-        huespedCRUD func = new huespedCRUD();
+        HuespedDAOImpl func = new HuespedDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }// GEN-LAST:event_searchMousePressed
@@ -329,6 +361,25 @@ public class FrmClienteVista extends javax.swing.JFrame {
     private void searchMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMouseEntered
 
     }// GEN-LAST:event_searchMouseEntered
+
+    private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel6MousePressed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_jLabel6MousePressed
+
+    private void Salir1MouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_Salir1MouseEntered
+        // TODO add your handling code here:
+    }// GEN-LAST:event_Salir1MouseEntered
+
+    private void Salir1MouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_Salir1MouseExited
+        // TODO add your handling code here:
+    }// GEN-LAST:event_Salir1MouseExited
+
+    private void Salir1MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_Salir1MousePressed
+        // TODO add your handling code here:
+        FrmServcioEditDelete f2 = new FrmServcioEditDelete();
+        f2.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_Salir1MousePressed
 
     /**
      * @param args the command line arguments
@@ -375,6 +426,7 @@ public class FrmClienteVista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Salir;
+    private javax.swing.JPanel Salir1;
     private javax.swing.JLabel Title3;
     private javax.swing.JLabel act;
     private javax.swing.JPanel body3;
@@ -383,6 +435,7 @@ public class FrmClienteVista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator5;
