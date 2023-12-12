@@ -4,8 +4,8 @@
  */
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
-import valquiria.desktop_hotel.Implements.habitacionCRUD;
+import valquiria.desktop_hotel.DAOImpl.HuespedDAOImpl;
+import valquiria.desktop_hotel.DAOImpl.HabitacionDAOImpl;
 import valquiria.desktop_hotel.Modelo.persona;
 import valquiria.desktop_hotel.Modelo.habitacion;
 import javax.swing.JOptionPane;
@@ -109,7 +109,6 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 10, 350));
 
         txttelefono.setForeground(new java.awt.Color(102, 102, 102));
-        txttelefono.setText("Ingrese un número telefónico");
         txttelefono.setBorder(null);
         txttelefono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -306,16 +305,7 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txttelefonoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txttelefonoMousePressed
-        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-            txtnombre.setText("Ingrese el nombre");
-        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
-        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-            txtnumero.setText("Ingrese el apellido materno");
-        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-            txtdomicilio.setText("Ingrese el domicilio");
-        if (txttelefono.getText().equals("Ingrese un número telefónico"))
-            txttelefono.setText("");
+
     }// GEN-LAST:event_txttelefonoMousePressed
 
     private void txttelefonoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txttelefonoActionPerformed
@@ -324,16 +314,6 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
 
     private void txtdomicilioMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtdomicilioMousePressed
 
-        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-            txtnombre.setText("Ingrese el nombre");
-        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
-        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-            txtnumero.setText("Ingrese el apellido materno");
-        if (txtdomicilio.getText().equals("Ingrese el domicilio"))
-            txtdomicilio.setText("");
-        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-            txttelefono.setText("Ingrese un número telefónico");
     }// GEN-LAST:event_txtdomicilioMousePressed
 
     private void txtdomicilioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtdomicilioActionPerformed
@@ -349,7 +329,7 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
     }// GEN-LAST:event_btneliminarMouseExited
 
     private void btneliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneliminarMousePressed
-        huespedCRUD func = new huespedCRUD();
+        HuespedDAOImpl func = new HuespedDAOImpl();
 
         // Cracion de codigo aleatorio
 
@@ -370,16 +350,7 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
     }// GEN-LAST:event_btneliminarMousePressed
 
     private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnombreMousePressed
-        if (txtnombre.getText().equals("Ingrese el nombre"))
-            txtnombre.setText("");
-        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
-        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-            txtnumero.setText("Ingrese el apellido materno");
-        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-            txtdomicilio.setText("Ingrese el domicilio");
-        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-            txttelefono.setText("Ingrese un número telefónico");
+
     }// GEN-LAST:event_txtnombreMousePressed
 
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnombreActionPerformed
@@ -387,16 +358,7 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
     }// GEN-LAST:event_txtnombreActionPerformed
 
     private void txtapellidosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtapellidosMousePressed
-        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-            txtnombre.setText("Ingrese el nombre");
-        if (txtapellidos.getText().equals("Ingrese el apellido paterno"))
-            txtapellidos.setText("");
-        if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
-            txtnumero.setText("Ingrese el apellido materno");
-        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-            txtdomicilio.setText("Ingrese el domicilio");
-        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-            txttelefono.setText("Ingrese un número telefónico");
+
     }// GEN-LAST:event_txtapellidosMousePressed
 
     private void txtapellidosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtapellidosActionPerformed
@@ -404,16 +366,7 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
     }// GEN-LAST:event_txtapellidosActionPerformed
 
     private void txtnumeroMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnumeroMousePressed
-        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
-            txtnombre.setText("Ingrese el nombre");
-        if (txtnumero.getText().equals("Ingrese el apellido materno"))
-            txtnumero.setText("");
-        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
-        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
-            txtdomicilio.setText("Ingrese el domicilio");
-        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
-            txttelefono.setText("Ingrese un número telefónico");
+
     }// GEN-LAST:event_txtnumeroMousePressed
 
     private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnumeroActionPerformed
@@ -438,8 +391,12 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
 
     private void btneditarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneditarMousePressed
         // TODO add your handling code here:
+
+        if (!validateInputs()) {
+            return;
+        }
         persona dts = new persona();
-        huespedCRUD func = new huespedCRUD();
+        HuespedDAOImpl func = new HuespedDAOImpl();
 
         dts.setCorreo(txtcorreo.getText());
 
@@ -468,6 +425,29 @@ public class FrmClienteDeleteEdit extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btneditarMousePressed
+
+    private boolean validateInputs() {
+        String regexEntero = "^\\d{1,12}$";
+        String regexDouble = "\\d{3}\\.\\d{2}";
+        String regexCorreo = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+
+        if (!txtnumero.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Número de Documento no válido");
+            return false;
+        }
+
+        if (!txttelefono.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Teléfono no válido");
+            return false;
+        }
+
+        if (!txtcorreo.getText().matches(regexCorreo)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Correo no válido");
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * @param args the command line arguments

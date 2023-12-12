@@ -4,9 +4,10 @@
  */
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
-import valquiria.desktop_hotel.Implements.reservaCRUD;
+import valquiria.desktop_hotel.DAOImpl.HuespedDAOImpl;
+import valquiria.desktop_hotel.DAOImpl.ReservaDAOImpl;
 import valquiria.desktop_hotel.Modelo.reserva;
+import javax.swing.JOptionPane;
 
 public class FrmReservaUp extends javax.swing.JFrame {
 
@@ -293,8 +294,11 @@ public class FrmReservaUp extends javax.swing.JFrame {
     }// GEN-LAST:event_btnnuevoMouseExited
 
     private void btnnuevoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMousePressed
+        if (!validateInputs()) {
+            return;
+        }
         reserva dts = new reserva();
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
 
         dts.setFechaIngreso(txtfechainicio.getText());
         dts.setFechaSalida(txtfechafina.getText());
@@ -356,8 +360,13 @@ public class FrmReservaUp extends javax.swing.JFrame {
     }// GEN-LAST:event_txtnumeroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+        String regexEntero = "^\\d{1,12}$";
 
-        huespedCRUD husCRUD = new huespedCRUD();
+        if (!txtidpersona.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Nro Doc no válido");
+            return;
+        }
+        HuespedDAOImpl husCRUD = new HuespedDAOImpl();
         String cliente = husCRUD.filtrarCliente(Integer.parseInt(txtidpersona.getText()));
         txtnombre.setText(cliente); // TODO add your handling code here:
 
@@ -365,10 +374,28 @@ public class FrmReservaUp extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
         String numero = func.fitrarHab(txtnumero.getText());
         txthabitacion.setText(numero);
     }// GEN-LAST:event_jButton2ActionPerformed
+
+    public boolean validateInputs() {
+        String regexEntero = "^\\d{1,12}$";
+        String regexDouble = "^\\d{1,3}(\\.\\d{1,2})?$";
+        String regexFecha = "^(?!0000)[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$";
+
+        if (!txtfechainicio.getText().matches(regexFecha)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Fecha Inicio no válido");
+            return false;
+        }
+
+        if (!txtfechafina.getText().matches(regexFecha)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Fecha Final no válido");
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * @param args the command line arguments

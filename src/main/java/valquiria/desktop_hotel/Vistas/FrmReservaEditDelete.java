@@ -4,7 +4,7 @@
  */
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.reservaCRUD;
+import valquiria.desktop_hotel.DAOImpl.ReservaDAOImpl;
 import valquiria.desktop_hotel.Modelo.reserva;
 import javax.swing.JOptionPane;
 
@@ -73,8 +73,8 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
         jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Title.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Title.setText("Registrar Reserva");
-        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        Title.setText("ActualizarReserva");
+        jPanel1.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, -1));
 
         Text1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Text1.setText("Fecha Final");
@@ -355,9 +355,30 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
 
     }// GEN-LAST:event_txtnombreMousePressed
 
+    public boolean validateInputs() {
+        String regexEntero = "^\\d{1,12}$";
+        String regexDouble = "^\\d{1,3}(\\.\\d{1,2})?$";
+        String regexFecha = "^(?!0000)[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$";
+
+        if (!txtfechaInicio.getText().matches(regexFecha)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Fecha Inicio no válido");
+            return false;
+        }
+
+        if (!txtfechaFinal.getText().matches(regexFecha)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Fecha Final no válido");
+            return false;
+        }
+
+        return true;
+    }
+
     private void btneditarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneditarMousePressed
+        if (!validateInputs()) {
+            return;
+        }
         reserva dts = new reserva();
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
 
         dts.setFechaIngreso(txtfechaInicio.getText());
         dts.setFechaSalida(txtfechaFinal.getText());
@@ -409,7 +430,7 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
     private void btneliminarMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btneliminarMousePressed
         // TODO add your handling code here:
         reserva dts = new reserva();
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
         dts.setIdReserva(Integer.parseInt(txtid.getText()));
         System.out.println("Se elimino correctamente la habitacion");
         func.eliminar(dts);
@@ -421,9 +442,14 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String regexEntero = "^\\d{1,12}$";
 
+        if (!txtidpersona.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Nro Doc no válido");
+            return;
+        }
         reserva dts = new reserva();
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
 
         txtnombre.setText(func.fitrar(txtidpersona.getText()));
         System.out.println("adada" + func.fitrar(txtidpersona.getText()));
@@ -432,7 +458,7 @@ public class FrmReservaEditDelete extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         reserva dts = new reserva();
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
 
         txthabitacion.setText(func.fitrarHab(txtnumero.getText()));
     }// GEN-LAST:event_jButton2ActionPerformed

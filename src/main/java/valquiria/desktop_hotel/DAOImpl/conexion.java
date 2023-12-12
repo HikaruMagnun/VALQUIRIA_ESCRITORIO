@@ -1,4 +1,4 @@
-package valquiria.desktop_hotel.Implements;
+package valquiria.desktop_hotel.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

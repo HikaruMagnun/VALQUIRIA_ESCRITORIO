@@ -1,7 +1,7 @@
 
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
+import valquiria.desktop_hotel.DAOImpl.HuespedDAOImpl;
 import valquiria.desktop_hotel.Modelo.persona;
 import javax.swing.JOptionPane;
 
@@ -162,7 +162,7 @@ public class FrmClienteUp extends javax.swing.JFrame {
         jPanel1.add(Text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         txtapellidos.setForeground(new java.awt.Color(102, 102, 102));
-        txtapellidos.setText("Ingrese el apellido paterno");
+        txtapellidos.setText("Ingrese el apellido");
         txtapellidos.setBorder(null);
         txtapellidos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -185,6 +185,7 @@ public class FrmClienteUp extends javax.swing.JFrame {
         jPanel1.add(Text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         txtnumero.setForeground(new java.awt.Color(102, 102, 102));
+        txtnumero.setText("Ingrese un numero");
         txtnumero.setBorder(null);
         txtnumero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -211,6 +212,7 @@ public class FrmClienteUp extends javax.swing.JFrame {
         jPanel1.add(Text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
 
         txtcorreo.setForeground(new java.awt.Color(102, 102, 102));
+        txtcorreo.setText("Ingrese un correo");
         txtcorreo.setBorder(null);
         txtcorreo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -256,13 +258,15 @@ public class FrmClienteUp extends javax.swing.JFrame {
         if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
             txtnombre.setText("Ingrese el nombre");
         if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
+            txtapellidos.setText("Ingrese el apellido");
         if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
             txtnumero.setText("Ingrese un numero");
         if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
             txtdomicilio.setText("Ingrese el domicilio");
         if (txttelefono.getText().equals("Ingrese un número telefónico"))
             txttelefono.setText("");
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txtcorreo.getText().equals(" "))
+            txtcorreo.setText("Ingrese un correo");
     }// GEN-LAST:event_txttelefonoMousePressed
 
     private void txttelefonoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txttelefonoActionPerformed
@@ -274,13 +278,15 @@ public class FrmClienteUp extends javax.swing.JFrame {
         if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
             txtnombre.setText("Ingrese el nombre");
         if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
+            txtapellidos.setText("Ingrese el apellido");
         if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
             txtnumero.setText("Ingrese un numero");
         if (txtdomicilio.getText().equals("Ingrese el domicilio"))
             txtdomicilio.setText("");
         if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
             txttelefono.setText("Ingrese un número telefónico");
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txtcorreo.getText().equals(" "))
+            txtcorreo.setText("Ingrese un correo");
     }// GEN-LAST:event_txtdomicilioMousePressed
 
     private void txtdomicilioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtdomicilioActionPerformed
@@ -295,9 +301,32 @@ public class FrmClienteUp extends javax.swing.JFrame {
 
     }// GEN-LAST:event_btnnuevoMouseExited
 
+    private void validateInputs() {
+        String regexEntero = "^\\d{1,12}$";
+        String regexDouble = "\\d{3}\\.\\d{2}";
+        String regexCorreo = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+
+        if (!txtnumero.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Número de Documento no válido");
+            return;
+        }
+
+        if (!txttelefono.getText().matches(regexEntero)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Teléfono no válido");
+            return;
+        }
+
+        if (!txtcorreo.getText().matches(regexCorreo)) {
+            JOptionPane.showMessageDialog(rootPane, "Campo Correo no válido");
+            return;
+        }
+    }
+
     private void btnnuevoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnnuevoMousePressed
+        validateInputs();
         persona dts = new persona();
-        huespedCRUD func = new huespedCRUD();
+        HuespedDAOImpl func = new HuespedDAOImpl();
+
         dts.setNumero_documento(Long.valueOf(txtnumero.getText()));
 
         int stipo = combotipo.getSelectedIndex();
@@ -309,25 +338,29 @@ public class FrmClienteUp extends javax.swing.JFrame {
         dts.setTelefono(txttelefono.getText());
         dts.setCorreo(txtcorreo.getText());
 
-        func.insertar(dts);
+        if (!func.insertar(dts)) {
+            JOptionPane.showMessageDialog(rootPane, "No se pudo ingresar el clientes, asegurate si ya fue registrado");
+        } else {
 
-        FrmClienteVista newframe = new FrmClienteVista();
-        newframe.setVisible(true);
-        this.dispose();
+            FrmClienteVista newframe = new FrmClienteVista();
+            newframe.setVisible(true);
+            this.dispose();
+        }
+
     }// GEN-LAST:event_btnnuevoMousePressed
 
     private void txtnombreMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtnombreMousePressed
         if (txtnombre.getText().equals("Ingrese el nombre"))
             txtnombre.setText("");
         if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
+            txtapellidos.setText("Ingrese el apellido");
         if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
             txtnumero.setText("Ingrese un numero");
         if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
             txtdomicilio.setText("Ingrese el domicilio");
         if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
             txttelefono.setText("Ingrese un número telefónico");
-        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txttelefono.getText().equals(" "))
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txtcorreo.getText().equals(" "))
             txtcorreo.setText("Ingrese un correo");
     }// GEN-LAST:event_txtnombreMousePressed
 
@@ -338,7 +371,7 @@ public class FrmClienteUp extends javax.swing.JFrame {
     private void txtapellidosMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtapellidosMousePressed
         if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
             txtnombre.setText("Ingrese el nombre");
-        if (txtapellidos.getText().equals("Ingrese el apellido paterno"))
+        if (txtapellidos.getText().equals("Ingrese el apellido"))
             txtapellidos.setText("");
         if (txtnumero.getText().equals("") || txtnumero.getText() == null || txtnumero.getText().equals(" "))
             txtnumero.setText("Ingrese un numero");
@@ -346,6 +379,8 @@ public class FrmClienteUp extends javax.swing.JFrame {
             txtdomicilio.setText("Ingrese el domicilio");
         if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
             txttelefono.setText("Ingrese un número telefónico");
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txttelefono.getText().equals(" "))
+            txtcorreo.setText("Ingrese un correo");
     }// GEN-LAST:event_txtapellidosMousePressed
 
     private void txtapellidosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtapellidosActionPerformed
@@ -358,11 +393,13 @@ public class FrmClienteUp extends javax.swing.JFrame {
         if (txtnumero.getText().equals("Ingrese un numero"))
             txtnumero.setText("");
         if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
-            txtapellidos.setText("Ingrese el apellido paterno");
+            txtapellidos.setText("Ingrese el apellido");
         if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
             txtdomicilio.setText("Ingrese el domicilio");
         if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
             txttelefono.setText("Ingrese un número telefónico");
+        if (txtcorreo.getText().equals("") || txtcorreo.getText() == null || txttelefono.getText().equals(" "))
+            txtcorreo.setText("Ingrese un correo");
     }// GEN-LAST:event_txtnumeroMousePressed
 
     private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnumeroActionPerformed
@@ -371,6 +408,19 @@ public class FrmClienteUp extends javax.swing.JFrame {
 
     private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_txtcorreoMousePressed
         // TODO add your handling code here:
+        if (txtnombre.getText().equals("") || txtnombre.getText() == null || txtnombre.getText().equals(" "))
+            txtnombre.setText("Ingrese el nombre");
+        if (txtnumero.getText().equals("Ingrese un numero") || txtnumero.getText() == null
+                || txtnumero.getText().equals(" "))
+            txtnumero.setText("Ingrese un numero");
+        if (txtcorreo.getText().equals("Ingrese un correo"))
+            txtcorreo.setText("");
+        if (txtapellidos.getText().equals("") || txtapellidos.getText() == null || txtapellidos.getText().equals(" "))
+            txtapellidos.setText("Ingrese el apellido");
+        if (txtdomicilio.getText().equals("") || txtdomicilio.getText() == null || txtdomicilio.getText().equals(" "))
+            txtdomicilio.setText("Ingrese el domicilio");
+        if (txttelefono.getText().equals("") || txttelefono.getText() == null || txttelefono.getText().equals(" "))
+            txttelefono.setText("Ingrese un número telefónico");
     }// GEN-LAST:event_txtcorreoMousePressed
 
     private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtcorreoActionPerformed

@@ -1,6 +1,6 @@
-package valquiria.desktop_hotel.Implements;
+package valquiria.desktop_hotel.DAOImpl;
 
-import valquiria.desktop_hotel.Interface.HabitacionDAO;
+import valquiria.desktop_hotel.DAO.HabitacionDAO;
 import valquiria.desktop_hotel.Modelo.habitacion;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class habitacionCRUD implements HabitacionDAO {
+public class HabitacionDAOImpl implements HabitacionDAO {
     private final conexion mysql = new conexion();
     private final Connection cn = mysql.conectar();
     private String sSQL = "";
@@ -50,7 +50,7 @@ public class habitacionCRUD implements HabitacionDAO {
 
         try {
             PreparedStatement statement = cn.prepareStatement(sql);
-            statement.setInt(1, dts.getIdhabitacion());
+            statement.setInt(1, dts.getNum_habitacion());
             statement.setInt(2, dts.getPiso());
             statement.setDouble(3, dts.getPrecio());
             statement.setString(4, dts.getTipo_habitacion());

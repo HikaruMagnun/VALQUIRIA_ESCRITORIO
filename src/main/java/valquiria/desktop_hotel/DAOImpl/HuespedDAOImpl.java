@@ -1,4 +1,5 @@
-package valquiria.desktop_hotel.Implements;
+
+package valquiria.desktop_hotel.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import valquiria.desktop_hotel.Interface.HuespedDAO;
+import valquiria.desktop_hotel.DAO.HuespedDAO;
 import valquiria.desktop_hotel.Modelo.persona;
 
-public class huespedCRUD implements HuespedDAO {
+public class HuespedDAOImpl implements HuespedDAO {
     private final conexion postgres = new conexion();
     private final Connection cn = postgres.conectar();
     private String sSQL = "";
@@ -26,7 +27,7 @@ public class huespedCRUD implements HuespedDAO {
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
 
-        sSQL = "SELECT * FROM clientes where nombre like '%" + buscar + "%' order by nro_doc";
+        sSQL = "SELECT * FROM clientes where CAST(nro_doc AS VARCHAR) like '%" + buscar + "%' order by nro_doc";
 
         try {
             Statement st = cn.createStatement();

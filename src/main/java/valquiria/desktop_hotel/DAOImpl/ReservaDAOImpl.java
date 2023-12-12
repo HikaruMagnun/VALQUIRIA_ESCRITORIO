@@ -1,11 +1,10 @@
-package valquiria.desktop_hotel.Implements;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package valquiria.desktop_hotel.DAOImpl;
 
-import valquiria.desktop_hotel.Interface.ReservaDAO;
+import valquiria.desktop_hotel.DAO.ReservaDAO;
 import valquiria.desktop_hotel.Modelo.reserva;
 import java.sql.Connection;
 import java.sql.Date;
@@ -21,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Piero
  */
-public class reservaCRUD implements ReservaDAO {
+public class ReservaDAOImpl implements ReservaDAO {
     private final conexion mysql = new conexion();
     private final Connection cn = mysql.conectar();
     private String sSQL = "";
@@ -37,13 +36,13 @@ public class reservaCRUD implements ReservaDAO {
         modelo = new DefaultTableModel(null, titulos);
 
         String sql = "SELECT a.id, a.id_cliente, c.nombre || ' ' || c.apellido AS huesped, " +
-                "h.codigo_habitacion AS numero, h.tipo AS tipo_habitacion, " +
+                "h.codigo_habitacion AS numero, a.comentario  AS personalizacion, " +
                 "a.fecha_alojamiento AS fecha_ingreso, a.fecha_alojamiento_vencimiento AS fecha_salida, " +
                 "COALESCE(h.precio_dia, 0) AS precio, a.estado_reserva " +
                 "FROM alojamientos a " +
                 "JOIN clientes c ON a.id_cliente = c.nro_doc " +
-                "LEFT JOIN habitaciones h ON a.id_habitacion = h.codigo_habitacion where c.nombre like '%" + buscar
-                + "%'";
+                "LEFT JOIN habitaciones h ON a.id_habitacion = h.codigo_habitacion where CAST(c.nro_doc AS VARCHAR) like '%"
+                + buscar + "%'";
 
         try {
             Statement st = cn.createStatement();
@@ -54,7 +53,7 @@ public class reservaCRUD implements ReservaDAO {
                 registro[1] = String.valueOf(resultSet.getInt("id_cliente"));
                 registro[2] = resultSet.getString("huesped");
                 registro[3] = String.valueOf(resultSet.getInt("numero"));
-                registro[4] = resultSet.getString("tipo_habitacion");
+                registro[4] = resultSet.getString("personalizacion");
                 registro[5] = resultSet.getString("fecha_ingreso");
                 registro[6] = resultSet.getString("fecha_salida");
                 registro[7] = resultSet.getString("precio");
@@ -160,14 +159,14 @@ public class reservaCRUD implements ReservaDAO {
 
         String huesped = "";
 
-        sSQL = "Select nombre,apaterno from persona where idpersona = " + id;
+        sSQL = "Select nombre,apellido from clientes where nro_doc = " + id;
 
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                huesped = rs.getString("nombre") + rs.getString("apaterno");
+                huesped = rs.getString("nombre") + rs.getString("apellido");
             }
 
             return huesped;

@@ -4,8 +4,8 @@
  */
 package valquiria.desktop_hotel.Vistas;
 
-import valquiria.desktop_hotel.Implements.huespedCRUD;
-import valquiria.desktop_hotel.Implements.reservaCRUD;
+import valquiria.desktop_hotel.DAOImpl.HuespedDAOImpl;
+import valquiria.desktop_hotel.DAOImpl.ReservaDAOImpl;
 import javax.swing.table.DefaultTableModel;
 
 public class FrmReservaVista extends javax.swing.JFrame {
@@ -15,14 +15,14 @@ public class FrmReservaVista extends javax.swing.JFrame {
     public FrmReservaVista() {
         initComponents();
         DefaultTableModel modelo;
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
@@ -66,7 +66,6 @@ public class FrmReservaVista extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtbuscarMousePressed(evt);
             }
-
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 txtbuscarMouseReleased(evt);
             }
@@ -79,11 +78,9 @@ public class FrmReservaVista extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 searchMouseEntered(evt);
             }
-
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 searchMouseExited(evt);
             }
-
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 searchMousePressed(evt);
             }
@@ -104,11 +101,9 @@ public class FrmReservaVista extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnactualizarMouseEntered(evt);
             }
-
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnactualizarMouseExited(evt);
             }
-
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnactualizarMousePressed(evt);
             }
@@ -134,11 +129,9 @@ public class FrmReservaVista extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnnuevoMouseEntered(evt);
             }
-
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnnuevoMouseExited(evt);
             }
-
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnnuevoMousePressed(evt);
             }
@@ -159,15 +152,16 @@ public class FrmReservaVista extends javax.swing.JFrame {
         jPanel4.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 80, -1));
 
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
-                },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
-                }));
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
         tablalistado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tablalistadoMousePressed(evt);
@@ -175,7 +169,7 @@ public class FrmReservaVista extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tablalistado);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 740, 280));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 880, 280));
 
         Salir.setBackground(new java.awt.Color(18, 90, 173));
         Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -183,11 +177,9 @@ public class FrmReservaVista extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SalirMouseEntered(evt);
             }
-
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 SalirMouseExited(evt);
             }
-
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 SalirMousePressed(evt);
             }
@@ -210,23 +202,22 @@ public class FrmReservaVista extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 758, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 921, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 428, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 428,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 6, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -249,7 +240,7 @@ public class FrmReservaVista extends javax.swing.JFrame {
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_searchMousePressed
         DefaultTableModel modelo;
-        reservaCRUD func = new reservaCRUD();
+        ReservaDAOImpl func = new ReservaDAOImpl();
         modelo = func.mostrar(txtbuscar.getText());
         tablalistado.setModel(modelo);
     }// GEN-LAST:event_searchMousePressed

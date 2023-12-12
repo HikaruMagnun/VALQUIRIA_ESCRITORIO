@@ -1,4 +1,4 @@
-package valquiria.desktop_hotel.Interface;
+package valquiria.desktop_hotel.DAO;
 
 import valquiria.desktop_hotel.Modelo.habitacion;
 import javax.swing.table.DefaultTableModel;
